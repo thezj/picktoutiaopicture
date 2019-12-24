@@ -1,9 +1,9 @@
 if (document.querySelectorAll('.imageList .image-item-inner img').length) {
   let titletext = document.querySelector('.gallery .info-box .title').innerHTML.trim().replace(/[<!>-]*/g, '')
   let newdiv = document.createElement('div')
-  newdiv.style = 'position:absolute;z-index:999;background:white'
+  newdiv.style = 'position:absolute;z-index:999;background:white;padding-bottom:90px'
   let title = document.createElement('h2')
-  title.innerHTML = '【写真女友】' + titletext
+  title.innerHTML = titletext
   newdiv.appendChild(title)
   Array.from(document.querySelectorAll('.imageList .image-item-inner img')).map(x => {
     x.src = x.dataset.src
