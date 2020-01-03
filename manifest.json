@@ -5,7 +5,7 @@
   "manifest_version": 2,
   "content_scripts": [
     {
-      "matches": ["https://www.toutiao.com/*","https://mp.toutiao.com/*/**"],
+      "matches": ["https://www.toutiao.com/*","https://mp.toutiao.com/*/**","https://www.sharefie.net/*"],
       "js": ["devtools.js"]
     }
   ]
