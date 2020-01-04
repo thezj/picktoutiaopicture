@@ -1,7 +1,7 @@
 if (document.querySelectorAll('.imageList .image-item-inner img').length) {
   let titletext = document.querySelector('.gallery .info-box .title').innerHTML.trim().replace(/[<!>-]*/g, '')
   let newdiv = document.createElement('div')
-  newdiv.style = 'position:absolute;z-index:999;background:white;padding-bottom:90px'
+  newdiv.style = 'position:absolute;width:40%; z-index:999;background:white;padding-bottom:90px'
   let title = document.createElement('h2')
   title.innerHTML = titletext
   newdiv.appendChild(title)
@@ -11,19 +11,39 @@ if (document.querySelectorAll('.imageList .image-item-inner img').length) {
     newdiv.appendChild(x)
   })
   document.body.prepend(newdiv)
+  setTimeout(() => {
+    var selection = window.getSelection();
+    var range = document.createRange();
+    range.selectNode(document.querySelectorAll('.imageList .image-item-inner img'));
+    selection.removeAllRanges();
+    selection.addRange(range);
+    document.execCommand('copy')
+    alert()
+  }, 20);
   console.log(newdiv)
 }
 
 if (document.querySelectorAll('.fullcont-box p img').length) {
 
   let newdiv = document.createElement('div')
-  newdiv.style = 'position:absolute;z-index:999;background:white;padding-bottom:90px'
+  newdiv.style = 'position:absolute; width:50%; z-index:999;background:white;padding-bottom:90px'
   Array.from(document.querySelectorAll('.fullcont-box p img')).map(x => {
     x.src = x.src
     x.style = 'margin:0 auto; width:10%;display:block'
     newdiv.appendChild(x)
   })
   document.body.prepend(newdiv)
+  setTimeout(() => {
+    var selection = window.getSelection();
+    var range = document.createRange();
+    range.selectNode(newdiv);
+    selection.removeAllRanges();
+    selection.addRange(range);
+    document.execCommand('copy')
+    alert()
+  }, 20);
+
+
   console.log(newdiv)
 }
 
